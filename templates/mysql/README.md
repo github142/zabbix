@@ -4,7 +4,7 @@ zabbix监控mysql本来就已经配置好现在只有启用一下就好了
 
 现在我写一下zabbix启用默认的mysql监控的
 
-mysql> GRANT USAGE ON *.* TO 'zabbixagent'@'localhost' IDENTIFIED BY 'zabbixagent';
+mysql> GRANT USAGE ON *.* TO 'zabbixagent'@'localhost' IDENTIFIED BY 'Zabbix_agent1';
 mysql> FLUSH PRIVILEGES;
 
 新建.my.cnf文件，我把这个文件放到/etc/zabbix目录下
@@ -12,13 +12,13 @@ mysql> FLUSH PRIVILEGES;
 # vi /etc/zabbix/.my.cnf
 [mysql]
 user=zabbixagent
-password=zabbixagent
+password=Zabbix_agent1
 [mysqladmin]
 user=zabbixagent
-password=zabbixagent
+password=Zabbix_agent1
 上面的配置项根据自己的情况修改配置文件
 
-# vi /etc/zabbix/zabbix_agentd/userparameter_mysql
+# vi /etc/zabbix/zabbix_agentd.d/userparameter_mysql
 
 /var/zabbix
 全部修改成
